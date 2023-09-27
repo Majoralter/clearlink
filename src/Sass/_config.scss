@@ -1,0 +1,78 @@
+// font
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+// openprops import
+@import "open-props/style";
+
+// material symbols
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+// resets
+*,*::after,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+body,html{
+    overflow-x: hidden;
+    background-color: var(--gray-1);
+    padding-block-start: 1rem;
+}
+
+// colors
+$black: #111;
+$white: #fff;
+$gray: var(--gray-3);
+$blue: #175CD3;
+
+// typography
+$font-size-fluid-0: clamp(.75rem, 1.5vw, 1rem);
+$font-size-fluid-1: clamp(1rem, 2vw, 1.5rem);
+$font-size-fluid-2: clamp(1.5rem, 3vw, 2.5rem);
+$font-size-fluid-3: clamp(2rem, 4vw, 3.5rem);
+
+// sizes, paddings & margins
+$size-fluid-1: clamp(.5rem, 1vw, 1rem);
+$size-fluid-2: clamp(1rem, 2vw, 1.5rem);
+$size-fluid-3: clamp(1.5rem, 3vw, 2rem);
+$size-fluid-4: clamp(2rem, 4vw, 3rem);
+$size-fluid-5: clamp(4rem, 5vw, 5rem);
+$size-fluid-6: clamp(5rem, 7vw, 7.5rem);
+$size-fluid-7: clamp(7.5rem, 10vw, 10rem);
+$size-fluid-8: clamp(10rem, 20vw, 15rem);
+$size-fluid-9: clamp(15rem, 30vw, 20rem);
+$size-fluid-10: clamp(20rem, 40vw, 30rem);
+
+// border
+$border: var(--border-size-1);
+
+// mixins
+@mixin flex($flex-direction, $align-items, $justify-content, $gap){
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    gap: $gap;
+}
+
+@mixin transition($ease){
+    transition: all .3s $ease;
+}
+
+@mixin link-style($background, $color, $border-color){
+    background-color: $background;
+    color: $color;
+    border: solid $border $border-color;
+    padding: 12px 24px;
+    border-radius: var(--radius-6);
+}

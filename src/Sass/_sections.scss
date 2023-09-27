@@ -1,0 +1,386 @@
+main{
+    width: 100dvw;
+
+    .hero--section{
+        padding: $size-fluid-7 $size-fluid-6 $size-fluid-5;
+        margin-inline: auto;
+        background-image: url(/public/images/Background\ pattern.png); 
+        background-size: 90% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 85dvh;
+        @include flex(row, center, space-between, 0);
+
+        .hero--content{
+            @include flex(column, flex-start, flex-start, 1em);
+
+            h1{
+                color: var(--gray-9);
+                font-size: $font-size-fluid-3;
+                font-weight: 500;
+                letter-spacing: var(--font-letterspacing-0);
+            }
+
+            p{
+                color: var(--gray-6);
+                line-height: var(--font-lineheight-2);
+            }
+
+            &_cta{
+                @include flex(row, center, center, 1em);
+                margin-top: $size-fluid-2;
+
+                a{
+                    @include flex(row, center, center, .3em);
+                }
+
+                a:first-of-type{
+                    @include link-style($blue, $white, transparent);
+                }
+
+                a:last-of-type{
+                    color: $blue;
+                    font-weight: 500;
+                }
+            }
+
+            .ratings{
+                @include flex(row, flex-start, flex-start, 1em);
+                margin-top: $size-fluid-2;
+
+                &--value{
+                    font-size: 14px;
+                    color: var(--gray-7);
+
+                    .star{
+                        font-variation-settings: 
+                            'FILL' 1
+                        ;
+                    }
+
+                    &::after{
+                        display: block;
+                        content: 'from 3,000+ reviews';
+                        font-size: 14px;
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+
+        .hero--image{
+            img{
+                height: 488px;
+                width: auto;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .section--1{
+        @include flex(column, center, center, 2em);
+        padding: $size-fluid-6 $size-fluid-6;
+
+        h4{
+            color: var(--gray-7);
+            font-weight: lighter;
+        }
+
+        .images{
+            @include flex(row, center, space-between, 0);
+            width: 80%;
+
+            img{
+                height: 24px;
+                width: auto;
+            }
+        }
+    }
+
+    .section--2{
+        padding: $size-fluid-5 $size-fluid-6;
+        @include flex(column, flex-start, flex-start, 3em);
+
+        &_top{
+            @include flex(column, flex-start, flex-start, .5em);
+            width: 85%;
+            position: relative;
+
+            img{
+                position: absolute;
+                right: 0;
+                bottom: -4rem;
+                height: 200px;
+                width: auto;
+            }
+
+            h4{
+                color: $blue;
+                font-weight: 500;
+            }
+
+            h2{
+                color: var(--gray-9);
+                font-size: $font-size-fluid-2;
+            }
+
+            p{
+                color: var(--gray-7);
+                line-height: var(--font-lineheight-2);
+            }
+        }
+
+        &_bottom{
+            @include flex(row, center, space-between, 0);
+            width: 100%;
+
+            .features{
+                width: 50%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4em 2em;
+
+                div{
+                    @include flex(column ,flex-start, flex-start, 1em);
+
+                    span{
+                        color: $blue;
+                        padding: .3em;
+                        background-color: var(--gray-1);
+                        border-radius: 50%;
+                        border: solid $border var(--gray-4);
+                    }
+
+                    h3{
+                        font-weight: 600;
+                        color: var(--gray-9);
+                    }
+
+                    p{
+                        color: var(--gray-7);
+                        line-height: var(--font-lineheight-2);
+                    }
+                }
+            }
+        }
+    }
+
+    .section--3{
+        padding: $size-fluid-5 $size-fluid-6;
+        @include flex(row, center, space-between, 0);
+        background-color: var(--gray-2);
+
+        .testimonial--wrapper{
+            height: 60dvh;
+            width: 40%;
+            @include flex(column, flex-start, space-between, 1.5em);
+            cursor: pointer;
+            background-color: var(--gray-2);
+            padding: 2em;
+            @include transition(var(--ease-1));
+
+            &:hover{
+                box-shadow: 0 0 1em var(--gray-3);
+            }
+
+            .stars{
+                @include flex(row,center,center,.1em);
+
+                .star{
+                     font-variation-settings: 
+                            'FILL' 1
+                        ;
+                }
+            }
+
+            h2{
+                color: var(--gray-9);
+                font-size: $font-size-fluid-1;
+                font-weight: 500;
+                line-height: var(--font-lineheight-2);
+            }
+
+            .details{
+                width: 100%;
+                @include flex(row, center, space-between, 0);
+
+                .user--details{
+                    @include flex(row, center, center, 1em);
+
+                    img{
+                        height: 48px;
+                        width: 48px;
+                        object-fit: cover;
+                        border-radius: var(--radius-round)
+                    }
+
+                    .user--name{
+                        @include flex(column, flex-start, flex-start, .2em);
+
+                    h5{
+                        text-transform: capitalize;
+                        font-size: $font-size-fluid-0;
+                    }
+
+                    p{
+                        color: var(--gray-7);
+                        text-transform: capitalize;
+                    }
+                    }
+                }
+
+                .navigation--tab{
+                    @include flex(row, center, center, 1.75em);
+
+                    button{
+                        all: unset;
+                        @include flex(row, center, center, 0);
+                        border-radius: var(--radius-round);
+                        padding: .75em;
+                        color: $blue;
+                        outline: solid $border var(--blue-1);
+                        cursor: pointer;
+                        @include transition(var(--ease-squish-1));
+
+                        &:hover{
+                            background-color: $blue;
+                            outline: none;
+                            color: $white;
+                            scale: .9;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .section--4{
+        padding: $size-fluid-5 $size-fluid-6;
+        @include flex(row, flex-start, space-between, 0);
+
+        &_left{
+            width: 30%;
+            @include flex(column, flex-start, flex-start, .5em);
+
+            h4{
+                color: $blue;
+                font-weight: 500;
+            }
+
+            h2{
+                color: var(--gray-9);
+                font-size: $font-size-fluid-2;
+            }
+
+            p{
+                color: var(--gray-7);
+                line-height: var(--font-lineheight-2);
+
+                a{
+                    color: var(--gar-7);
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &_right{
+            width: 50%;
+            @include flex(column, flex-start, flex-start, 0);
+
+            .accordion:not(:last-of-type){
+                border-bottom: solid $border var(--gray-3);
+            }
+
+            .accordion{
+                padding: 1.75rem;
+                @include flex(column, flex-start, flex-start, 1em);
+                width: 100%;
+                cursor: pointer;
+                @include transition(var(--ease-1));
+
+                .controls{
+                    @include flex(row, center, space-between, 0);
+                    width: 100%;
+
+                    h3{
+                    font-size: $font-size-fluid-0;
+                  }
+
+                  span{
+                    @include flex(row, center, center, 0);
+                    color: var(--gray-6);
+                    font-size: $font-size-fluid-0;
+                    padding: .07em;
+                    border-radius: var(--radius-round);
+                    border: solid $border var(--gray-6);
+                  }
+
+                }
+
+                p{
+                    font-size: 15px;
+                    color: var(--gray-7);
+                    line-height: var(--font-lineheight-2);
+                }
+            }
+        }
+    }
+
+    .section--5{
+         padding: $size-fluid-5 $size-fluid-6;
+        @include flex(row, flex-start, space-between, 0);
+        position: relative;
+
+        &_left{
+            @include flex(column, flex-start, flex-start, 2em);
+
+            h2{
+                font-size: $font-size-fluid-2;
+                font-weight: 600;
+            }
+
+          .list{
+            @include flex(column, flex-start, flex-start, 1em);
+
+              p{
+                @include flex(row, center, flex-start, .3em);
+                color: var(--gray-7);
+
+                span{
+                    font-size: $font-size-fluid-0;
+                    padding: .09em;
+                    color: $blue;
+                    border: solid 2px $blue;
+                    border-radius: var(--radius-round);
+                }
+            }
+          }
+
+          .cta{
+               @include flex(row, center, center, 1em);
+                margin-top: $size-fluid-2;
+
+                a{
+                    @include flex(row, center, center, .3em);
+                }
+
+                a:first-of-type{
+                    @include link-style(transparent, var(--gray-10), var(--gray-7));
+                    font-weight: 500;
+                }
+
+                a:last-of-type{
+                    @include link-style($blue, $white, transparent);
+                }
+          }
+        }
+
+        img{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 500px;
+            width: auto;
+        }
+    }
+}

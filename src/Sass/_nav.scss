@@ -1,0 +1,56 @@
+nav{
+    margin-inline: auto;
+    width: 85%;
+    @include flex(row, center, space-between, 0);
+    background-color: var(--gray-2);
+    padding: $size-fluid-1;
+    border-radius: var(--radius-6);
+    border: solid $border var(--gray-4);
+
+    .logo{
+        @include flex(row, center, center, 0);
+        color: $black;
+        font-weight: 500;
+        font-size: 20px;
+
+        span{
+            color: $blue;
+        }
+    }
+
+    ul{
+        @include flex(row, center, center, 1.5em);
+
+        li{
+            a{
+                @include flex(row, center, center, 0);
+
+                span{
+                    margin-top: 3px;
+                }
+            }
+        }
+    }
+
+    ul:first-of-type{
+        li{
+            a{
+                color: var(--gray-7);
+            }
+        }
+    }
+
+    ul:last-of-type{
+        li:first-of-type{
+            a{
+                @include link-style($white, $black, var(--gray-6));
+            }
+        }
+
+        li:last-of-type{
+            a{
+                @include link-style($blue, $white, transparent)
+            }
+        }
+    }
+}
