@@ -171,6 +171,7 @@ main{
         background-color: var(--gray-2);
 
         .testimonial--wrapper{
+            position: relative;
             height: 60dvh;
             width: 40%;
             @include flex(column, flex-start, space-between, 1.5em);
@@ -181,6 +182,17 @@ main{
 
             &:hover{
                 box-shadow: 0 0 1em var(--gray-3);
+            }
+
+            .timer{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background-color: var(--gray-4);
+                opacity: .2;
+                pointer-events: none;
             }
 
             .stars{

@@ -4,18 +4,26 @@ import Star from "./Star";
 const Carousel = (props) =>{
     const [index, setIndex] = useState(0)
     const [pause, setPause] = useState(false)
+    const [width, setWidth] = useState(0)
+
+    const style = {
+      width: `${width}%`,
+      transition: "all .15s var(--ease-2)"
+    }
 
     useEffect(() =>{
+      width === 100 &&
+        setIndex((prevIndex) =>
+          prevIndex === props.data.length - 1 ? 0 : prevIndex + 1
+        );
         const carouselInterval = setInterval(() =>{
             if(!pause){
-               setIndex((prevIndex) =>
-                 prevIndex === props.data.length - 1 ? 0 : prevIndex + 1
-               );
+               setWidth(prevWidth => prevWidth === 100 ? 0 : prevWidth + 1)
             }
-        }, 5000)
+        }, 50)
 
         return () => clearInterval(carouselInterval)
-    }, [pause])
+    }, [pause, width])
 
    const handleNext = () =>{
         setIndex(prevIndex => prevIndex === props.data.length - 1 ? 0 : prevIndex + 1)
@@ -55,6 +63,8 @@ const Carousel = (props) =>{
             </button>
           </div>
         </div>
+
+        <div className="timer" style={style}></div>
       </div>
     );
 }
