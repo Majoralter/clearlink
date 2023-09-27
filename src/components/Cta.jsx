@@ -18,7 +18,7 @@ const Cta = () =>{
     return(
         <section className="section--5">
             <div className="section--5_left">
-                <h2>Ready to clear the path to <br />perfect communication</h2>
+                <h2>Ready to clear the path to <br />perfect communication?</h2>
 
                 <div className="list">
                     {list}
